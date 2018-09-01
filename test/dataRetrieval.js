@@ -63,13 +63,6 @@ describe('#DataRetrieval', () => {
     });
   });
 
-  describe('#payload', () => {
-    it(`should get payload`, async () => {
-      let payload = await Wormhole.DataRetrieval.payload("000000000000000000000000000000000000000000000000000000000000000");
-      assert.deepEqual(payload, 'txid must be hexadecimal string (not \'000000000000000000000000000000000000000000000000000000000000000\')');
-    });
-  });
-
   describe('#property', () => {
     it(`should get property by id`, async () => {
       let property = await Wormhole.DataRetrieval.property(3);
@@ -81,20 +74,6 @@ describe('#DataRetrieval', () => {
     it(`should get seedBlocks`, async () => {
       let seedBlocks = await Wormhole.DataRetrieval.seedBlocks(290000, 300000);
       assert.deepEqual(Object.keys(seedBlocks), [ ]);
-    });
-  });
-
-  describe('#STO', () => {
-    it(`should get STO`, async () => {
-      let STO = await Wormhole.DataRetrieval.STO("000000000000000000000000000000000000000000000000000000000000000", "*");
-      assert.deepEqual(STO, 'txid must be hexadecimal string (not \'000000000000000000000000000000000000000000000000000000000000000\')');
-    });
-  });
-
-  describe('#transaction', () => {
-    it(`should get transaction`, async () => {
-      let transaction = await Wormhole.DataRetrieval.transaction("000000000000000000000000000000000000000000000000000000000000000");
-      assert.deepEqual(transaction, 'txid must be hexadecimal string (not \'000000000000000000000000000000000000000000000000000000000000000\')');
     });
   });
 
